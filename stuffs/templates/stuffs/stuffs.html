@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div id="navbar-image"></div>
+
+<ul id="navbar">
+       <li><a href="#products">محصولات</a></li>
+       <li><a href="#footer">تماس با ما</a></li>
+  </ul> 
+
+<div id="products">
+
+    {% for stuff in stuffs %}
+      <div class="container">
+
+        <img class="img" src="{{ stuff.featured_image.url }}" alt="stuff_img">
+        <h3>{{stuff.name}}</h3>
+        <p>{{stuff.description}}</p>
+        <p>09123456789</p>
+
+      </div>
+    {% endfor %}
+    
+</div>
+
+<!-- {% include 'pagination.html' with queryset=stuffs custom_range=custom_range %} -->
+
+<footer id="footer">
+   <h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از </h4>
+   <h4>09123456789</h4>
+</footer>
+
+{% endblock content %}
